@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<div class="ui container">
+
+  <input type="number" [(ngModel)] = "currencyValue" class="ui input num">
+
+  <div>
+    <p>FROM</p>
+    <select name="currencyConverter" id="currencies" [(ngModel)]="selected"  class="sel">
+      <option value="USD">USD</option>
+      <option value="EUR">EUR</option>
+      <option value="GBP">GBP</option>
+      <option value="JPY">JPY</option>
+      <option value="NGN">NGN</option>
+    </select>
+  </div>
+
+  <div>
+    <p>TO</p>
+    <select name="currencyConvertTo" id="currencies" [(ngModel)]="selected1"  class="sel">
+      <option value="USD">USD</option>
+      <option value="EUR">EUR</option>
+      <option value="GBP">GBP</option>
+      <option value="JPY">JPY</option>
+      <option value="NGN">NGN</option>
+    </select>
+  </div>
+
+  <button class="ui button btn" (click)= "getTest()">CONVERT</button>
+
+  <p *ngIf="test">{{ currencyValue }} {{selected}} = {{converted}} {{selected1}}</p>
+  <p *ngIf="equal" class="red">Cannot convert to the same currency</p>
+</div>
+
